@@ -1,0 +1,14 @@
+Task 3-1: Data manipulation 
+	a) done, see implementation please  ( I tried to comment my code in order to make it more readeable )
+	b) done, see implementation please  
+	c) First Part : 
+	     tstamp2 : objects look like that : 2001-05-21 21:50:15 , yyyy-mm-dd- hh:mm:se  , mode is numeric class is POSIXct" "POSIXt"
+	     I did like subset=result$tmstp2 , then mode(subset[2]) and class mode (subset[2])
+	    conclusion : postix representation is as following : yyyy-mm-dd- hh:mm:se
+		but for tstamp3 , it looks like x seconds since Jan 01 1970. (UTC)
+		for example 69896256 is equivalanet to 03/19/1972 @ 11:37pm (UTC) mentionned here(https://www.unixtimestamp.com/index.php)
+
+      Second Part and Third Part : : I wrote two functions  diffPOstin  and diffUnixFormat and I counted the differnces between dates on index 1 and 2 ,
+	   using diffPOstin , result: Time difference of 808.9844 days
+	   using diffUnixFormat , result : 69896256 // when we convert this number to a date we get 03/19/1972 , and the diff between the obtained date and the 1 JULY 1970 is also 809 days 
+	   
