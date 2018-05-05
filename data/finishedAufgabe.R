@@ -98,15 +98,55 @@ diffUnixFormat <- function  (dataset){
 
 getWeekday <- function  (dataset){
   ### get the tmstpf2 column
-  tstamp2=dataset[,'tstamp2'] 
+  ### tstamp2=dataset[,'tstamp2'] 
+  ###  tstamp2 = as.factor(tstamp2)
   
-  d= (tstamp2[3])
-  print(d)
+  k <- weekdays(as.Date(dataset$tstamp2))
+  dataset$wday=as.factor(k)
+  return (dataset)
 }
+
+
+setHours <- function  (dataset){
+
+  k <- as.POSIXlt(dataset$tstamp2)$hour
+  dataset$hour=as.factor(k)
+  return (dataset)
+}
+###  
+raw.hours <- function (dataset)
+{ ### add levels ( to show empty values)
+  levels(dataset$hour) <- c(levels(dataset$hour), c(0:23))
+  
+  hours<-table(unlist(dataset$hour))
+  return(hours)
+}
+
+raw.weekdays <- function (dataset)
+{ ### get weekdays and put them into a vector
+  ### i choosed a random date
+  xd <- as.Date("2012-07-27")
+  daysvector= c(weekdays(xd + 0:6))
+  ###
+  
+  levels(dataset$wday) <- c(levels(dataset$wday), daysvector)
+  
+  wdays<-table(unlist(dataset$wday))
+  return(wdays)
+}
+
+
 
 result=myread.cvsdata(file.choose())
 result =transformtmstp(result)
 result =transformtounixFormat(result)
 diffPOstin(result)
 diffUnixFormat(result)
-getWeekday(result)
+### append week day 
+result=getWeekday(result)
+### append hours day 
+result=setHours(result)
+hours =raw.hours(result)
+max(hours)
+
+min(hours)
