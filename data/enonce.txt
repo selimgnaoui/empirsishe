@@ -12,3 +12,39 @@ Task 3-1: Data manipulation
 	   using diffPOstin , result: Time difference of 808.9844 days
 	   using diffUnixFormat , result : 69896256 // when we convert this number to a date we get 03/19/1972 , and the diff between the obtained date and the 1 JULY 1970 is also 809 days 
 	   
+	 d 	) *for  jikes.tsv
+	 
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23 
+ 261 486 215 190 233 294 276 324 257 144 256  64  55 340 368 415 241 245 372 245 354 415 398 174	 
+	 
+	 Max is 486  (1)
+	 Min IS 55    (12)
+	 Dienstag Donnerstag    Freitag   Mittwoch     Montag    Samstag    Sonntag 
+     1052        917       1219       1419        906        654        455 
+	 max is 1419
+	 Min is 455
+	*********************************************************************** 
+	     *for junit.tsv,
+		  0   1   2   3   4   5   6   7   8   9  10  13  14  15  16  17  18  19  20  21  22  23  11  12 
+         82  21  32   3   8   5  10  10   8  10   1   2   1 187   2  14  20   3  30  45   9 120   0   0
+		 
+		 Max 187  (15)
+		 Min    11 12 
+		         0 0
+	       
+Dienstag Donnerstag    Freitag   Mittwoch     Montag    Samstag    Sonntag 
+        75         54         56         44         65        107        222 
+		 max is 222 sonntag 
+	     Min is 44 Mittwoch
+		
+		
+		***********************************************************************    
+		 *for zile.tsv 
+		 0   1   2   3   4   5   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23   6   7 
+        353 268 227 102  19  49  21   2  13  50  38  82 115 101  44 192 114 107  43 117 127 350   0   0
+		 
+		 Max(353 )
+		 Min (0   0 ) 6 7
+		 
+		 Dienstag Donnerstag    Freitag   Mittwoch     Montag    Samstag    Sonntag 
+       381        295        457        320        424        259        398 
