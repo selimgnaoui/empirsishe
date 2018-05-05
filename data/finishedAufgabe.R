@@ -134,6 +134,12 @@ raw.weekdays <- function (dataset)
   wdays<-table(unlist(dataset$wday))
   return(wdays)
 }
+myplot.hours.bars = function (hours){
+  plot(hours)
+}
+myplot.wdays.bars = function(wday){
+  plot(wdays)
+}
 
 
 
@@ -148,5 +154,10 @@ result=getWeekday(result)
 result=setHours(result)
 hours =raw.hours(result)
 max(hours)
-
 min(hours)
+weekdays = raw.weekdays(result)
+max(weekdays)
+min(weekdays)
+plot(weekdays)
+plot(hours)
+plot(result)
