@@ -1,0 +1,29 @@
+Aufgabe 3-2: Plotting data
+ 1) *I read the documentation , so plot is used to plot R objects , eg functions, dataframes , density objects, tables etc...
+ * I wrote 2 functions ( myplot.hours.bars and myplot.wdays.bars )
+ *plot(table(result$wday)) AND  plot(factor(result$wday))
+ * maybe result$wday= factor(levels=c("mon","tues","eden"")) ?  I think using • Boxplots (names ) can be a good alternative
+ * Well, I didnt understand the question , but I think we can try something like using factor of developer as y axis, and factordays/hours as x axis 
+2) for Junit.csv : I would say that both kbeck and emeade have the highests contribution , as we see that that are 
+    for jikes, I think all contributors are always deleding/adding serveral lines 
+	* bwplot(developer~wday , data = result,box.ratio = 300) can be helpful if we want to figure out for each developers which day of the week they prefer to work
+	  bwplot(developer~hours , data = result,box.ratio = 300) etc ... .
+3) densityplot(~log(lines_add+1,2)|developer , data = result,width = 1)                    
+
+One understandable advantage that  I found [1]is An advantage Density Plots have over Histograms is that they're better at determining the distribution shape because they're not affected by the number of bins used (each bar used in a typical histogram). A Histogram comprising of only 4 bins wouldn't produce a distinguishable enough shape of distribution as a 20-bin Histogram would. However, with Density Plots, this isn't an issue.
+
+histogram(~log(lines_add+1,2)|developer , data = result,width = 1)                    
+Histogram shows bins, density shows curve , 
+well curves are  sometimes better as they removing noise  (not like bins ) and there is no dependance on bins-number
+
+
+4) + The X axis is representing the number of indviduals who contributed/wrote code to The Apachhe
+ *
+
+
+
+[1]https://datavizcatalogue.com/methods/density_plot.html
+
+                  
+
+	  

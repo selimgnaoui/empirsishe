@@ -1,4 +1,4 @@
-
+library(lattice)
 
 ### Exercice 1 Gnaoui Salim and Gharbi Marwen
 ### 2.1 is done, 
@@ -45,14 +45,14 @@ developer.busy <- function (data) {
 developer.changedFils <- function (data)
 {
   
- resullt = ( data.frame ( table ( data$developer, data$file) ) )
- ### we got a table result with 3 columns , var1 is developer name, var2 file name, and Freq is frequency
- 
- ### we count the total number of files , we will need it for the c 
- totalnumberoffile=nlevels(resullt[,2])
-
- return (result)
- 
+  resullt = ( data.frame ( table ( data$developer, data$file) ) )
+  ### we got a table result with 3 columns , var1 is developer name, var2 file name, and Freq is frequency
+  
+  ### we count the total number of files , we will need it for the c 
+  totalnumberoffile=nlevels(resullt[,2])
+  
+  return (result)
+  
 }
 ### this function will transform the tmstpf field to POSIXct
 ### argument : the dataset 
@@ -65,7 +65,7 @@ transformtmstp <- function  (dataset){
   dataset <- cbind(dataset,data.frame(tstamp2))
   ### return the result (the dataframe and the tstampf column)
   return (dataset)
-   
+  
 }
 ### this funcction will transform the tmstmp to "unix format"
 transformtounixFormat <- function  (dataset){
@@ -85,7 +85,7 @@ diffPOstin <- function  (dataset){
   tstamp2=dataset[,'tstamp2'] 
   ### print the diff between index 1 and 2 
   print (tstamp2[1]-tstamp2[2])
- 
+  
 }
 ### will compute the diffrence between two dates in Unix
 diffUnixFormat <- function  (dataset){
@@ -93,7 +93,7 @@ diffUnixFormat <- function  (dataset){
   tstamp3=dataset[,'tstamp3'] 
   ### print the diff between index 1 and 2 
   print.default (tstamp3[1]-tstamp3[2])
-
+  
 }
 
 getWeekday <- function  (dataset){
@@ -108,7 +108,7 @@ getWeekday <- function  (dataset){
 
 
 setHours <- function  (dataset){
-
+  
   k <- as.POSIXlt(dataset$tstamp2)$hour
   dataset$hour=as.factor(k)
   return (dataset)
@@ -127,7 +127,6 @@ raw.weekdays <- function (dataset)
   ### i choosed a random date
   xd <- as.Date("2012-07-27")
   daysvector= c(weekdays(xd + 0:6))
-  
   ###
   
   levels(dataset$wday) <- c(levels(dataset$wday), daysvector)
@@ -159,9 +158,8 @@ min(hours)
 weekdays = raw.weekdays(result)
 max(weekdays)
 min(weekdays)
-
-
-
-
-
-
+### begin of task 2 
+bwplot(developer~wday , data = result,box.ratio = 300)
+bwplot(~log(lines_add+1,2)|developer , data = result)                    
+densityplot(~log(lines_add+1,2)|developer , data = result,width = 1)                    
+histogram(~log(lines_add+1,2)|developer , data = result,width = 1)                    
